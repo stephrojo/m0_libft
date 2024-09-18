@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_isdigit.c                                  :+:      :+:    :+:   */
+/*   main_ft_strlen.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strojo-h <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:23:17 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/09/18 17:43:40 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/09/18 17:53:43 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_isdigit(int c);
+unsigned int	ft_strlen(const char *s);
 
 int	main(int argc, char *argv[])
 {
-	int		i;
-	char	c;
+	int	length;
 
 	if (argc < 2)
 	{
@@ -26,16 +25,9 @@ int	main(int argc, char *argv[])
 	}
 	else
 	{
-		i = 0;
-		while (argv[1][i] != '\0')
-		{
-			c = argv[1][i];
-			if (ft_isdigit(c))
-				write(1, "Es un digito\n", 13);
-			else
-				write(1, "No es un digito\n", 16);
-			i++;
-		}
+		length = ft_strlen(argv[1]);
+		write(1, &((char){((length / 10) + '0')}), 1);
+		write(1, &((char){((length % 10) + '0')}), 1);
 		return (0);
 	}
 }

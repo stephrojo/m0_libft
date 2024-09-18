@@ -6,7 +6,7 @@
 /*   By: strojo-h <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:23:17 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/09/18 16:06:57 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/09/18 17:42:24 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ int	main(int argc, char *argv[])
 	char	c;
 
 	if (argc < 2)
+	{
 		write(1, "error\n", 6);
+		return (1);
+	}
 	else
 	{
 		i = 0;

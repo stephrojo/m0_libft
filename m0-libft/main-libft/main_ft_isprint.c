@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_isdigit.c                                  :+:      :+:    :+:   */
+/*   main_ft_isprint.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strojo-h <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:23:17 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/09/18 17:43:40 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/09/18 17:44:05 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_isdigit(int c);
+int	ft_isprint(int c);
 
 int	main(int argc, char *argv[])
 {
@@ -30,10 +30,10 @@ int	main(int argc, char *argv[])
 		while (argv[1][i] != '\0')
 		{
 			c = argv[1][i];
-			if (ft_isdigit(c))
-				write(1, "Es un digito\n", 13);
+			if (ft_isprint(c))
+				write(1, "Es imprimible\n", 14);
 			else
-				write(1, "No es un digito\n", 16);
+				write(1, "No es imprimible\n", 17);
 			i++;
 		}
 		return (0);
