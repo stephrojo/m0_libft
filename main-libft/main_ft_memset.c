@@ -6,18 +6,33 @@
 /*   By: strojo-h <strojo-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:23:17 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/09/19 17:32:46 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/09/20 15:19:04 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <unistd.h> //write
+#include <stdlib.h> //malloc y free
 
-int	ft_memset(int c);
+void	*ft_memset(void *s, int c, unsigned int n);
+
+unsigned int	ft_atoi(const char *buffer_size)
+{
+	unsigned int	result;
+
+	result = 0;
+	while (*buffer_size >= '0' && *buffer_size <= '9')
+	{
+		result = result * 10 + (*buffer_size - '0');
+		buffer_size++;
+	}
+	return (result);
+}
 
 int	main(int argc, char *argv[])
 {
-	int		i;
-	char	c;
+	char			*buffer;
+	unsigned int	n;
+	char			fill_char;
 
 	if (argc < 3)
 	{
@@ -26,17 +41,19 @@ int	main(int argc, char *argv[])
 	}
 	else
 	{
-		ft_memset(argv[])
-		i = 0;
-		while (argv[1][i] != '\0')
+		n = ft_atoi(argv[2]);
+		buffer = (char *)malloc(n + 1);
+		if (!buffer)
 		{
-			c = argv[1][i];
-			if (ft_isalnum(c))
-				write(1, "Es una letra/digito\n", 20);
-			else
-				write(1, "No es una letra/digito\n", 23);
-			i++;
+			write(1, "error, no se pudo asignar bloque de memoria\n", 44);
+			return (1);
 		}
+		fill_char = argv[1][0];
+		ft_memset(buffer, fill_char, n);
+		buffer[n] = '\0';
+		write(1, buffer, n);
+		write(1, "\n", 1);
+		free(buffer);
 		return (0);
 	}
 }
