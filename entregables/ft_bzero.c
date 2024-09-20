@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strojo-h <strojo-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 16:26:34 by strojo-h          #+#    #+#             */
+/*   Created: 2024/09/20 16:01:27 by strojo-h          #+#    #+#             */
 /*   Updated: 2024/09/20 16:51:21 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *s, int c, unsigned int n)
+void	ft_bzero(void *s, unsigned int n)
 {
 	unsigned char	*cast_s;
-	unsigned char	cast_c;
 
 	cast_s = (unsigned char *)s;
-	cast_c = (unsigned char)c;
 	while (n != 0)
 	{
-		*cast_s = cast_c;
+		*cast_s = 0;
 		cast_s++;
 		n--;
 	}
-	return (s);
 }
