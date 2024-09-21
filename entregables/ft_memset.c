@@ -6,11 +6,13 @@
 /*   By: strojo-h <strojo-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 16:26:34 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/09/20 16:51:21 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/09/21 09:43:48 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *s, int c, unsigned int n)
+#include <string.h>
+
+void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*cast_s;
 	unsigned char	cast_c;

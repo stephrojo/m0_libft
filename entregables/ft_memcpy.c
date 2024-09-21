@@ -6,7 +6,7 @@
 /*   By: strojo-h <strojo-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 16:38:23 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/09/20 16:52:57 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/09/21 09:43:50 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ void	*ft_memcpy(void *dest, const void *src, unsigned int n)
 		cast_src++;
 		n--;
 	}
+	return (dest);
 }
