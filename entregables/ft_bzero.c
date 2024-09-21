@@ -6,11 +6,13 @@
 /*   By: strojo-h <strojo-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 16:01:27 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/09/20 16:51:21 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/09/21 10:11:42 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, unsigned int n)
+#include <stddef.h>
+
+void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*cast_s;
 

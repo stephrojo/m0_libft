@@ -6,11 +6,13 @@
 /*   By: strojo-h <strojo-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 16:38:23 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/09/21 09:43:50 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/09/21 10:16:49 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dest, const void *src, unsigned int n)
+#include <stddef.h>
+
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char	*cast_dest;
 	unsigned char	*cast_src;

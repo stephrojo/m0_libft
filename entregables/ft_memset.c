@@ -6,11 +6,11 @@
 /*   By: strojo-h <strojo-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 16:26:34 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/09/21 09:43:48 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/09/21 10:10:31 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stddef.h>
 
 void	*ft_memset(void *s, int c, size_t n)
 {
