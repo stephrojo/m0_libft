@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   main_ft_memcpy.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/18 17:12:30 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/09/22 21:36:27 by strojo-h         ###   ########.fr       */
+/*   Created: 2024/09/21 10:28:46 by strojo-h          #+#    #+#             */
+/*   Updated: 2024/09/21 14:02:17 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <unistd.h> //write
+#include <stdlib.h> //malloc y free
 
-size_t	ft_strlen(const char *s)
+void    *ft_memcpy(void *dest, const void *src, size_t n);
+
+
+
+int		main(int argc, char *argv[])
 {
-	size_t	length;
-
-	length = 0;
-	while (s[length] != '\0')
-		length++;
-	return (length);
+	char	*buffer_dest;
+	char	*buffer_src;
+	
 }

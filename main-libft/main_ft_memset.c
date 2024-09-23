@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   main_ft_memset.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: strojo-h <strojo-h@student.42.fr>          +#+  +:+       +#+        */
+/*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:23:17 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/09/20 15:19:04 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/09/21 14:00:19 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h> //write
 #include <stdlib.h> //malloc y free
+#include <stddef.h> //size_t
 
-void	*ft_memset(void *s, int c, unsigned int n);
+void	*ft_memset(void *s, int c, size_t n);
 
 unsigned int	ft_atoi(const char *buffer_size)
 {
@@ -31,7 +32,7 @@ unsigned int	ft_atoi(const char *buffer_size)
 int	main(int argc, char *argv[])
 {
 	char			*buffer;
-	unsigned int	n;
+	size_t			n;
 	char			fill_char;
 
 	if (argc < 3)
