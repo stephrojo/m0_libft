@@ -6,7 +6,7 @@
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:23:17 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/09/21 14:00:19 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/09/23 22:37:26 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	main(int argc, char *argv[])
 	}
 	else
 	{
-		n = ft_atoi(argv[2]);
+		n = (size_t)ft_atoi(argv[2]);
 		buffer = (char *)malloc(n + 1);
 		if (!buffer)
 		{
