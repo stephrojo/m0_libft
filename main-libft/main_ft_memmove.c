@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main_ft_memmove.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: strojo-h <strojo-h@student.42.fr>          +#+  +:+       +#+        */
+/*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 10:28:46 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/09/24 17:53:28 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/09/24 23:21:35 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h> //write
 #include <stdlib.h> //malloc y free
-#include <stddef.h>
+#include <stddef.h> //size_t
 
 void    *ft_memmove(void *dest, const void *src, size_t n);
 
