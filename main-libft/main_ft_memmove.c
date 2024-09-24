@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_memcpy.c                                   :+:      :+:    :+:   */
+/*   main_ft_memmove.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strojo-h <strojo-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 10:28:46 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/09/24 16:24:46 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/09/24 17:53:28 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h> //malloc y free
 #include <stddef.h>
 
-void    *ft_memcpy(void *dest, const void *src, size_t n);
+void    *ft_memmove(void *dest, const void *src, size_t n);
 
 size_t	ft_strlen(const char *s)
 {
@@ -40,15 +40,15 @@ int		main(int argc, char *argv[])
 	}
 	else
 	{
-		//n = ft_strlen(argv[1]);
-		n = 5;
+		n = ft_strlen(argv[1]);
+		//n = 5;
 		buffer_dest = (char *)malloc(n + 1);
 		if (!buffer_dest)
 		{
 			write(1, "error, no se pudo asignar bloque de memoria\n", 44);
 			return (1);
 		}
-		ft_memcpy(buffer_dest, argv[1], n);
+		ft_memmove(buffer_dest, argv[1], n);
 		buffer_dest[n] = '\0';
 		while (buffer_dest[i] != '\0')
 		{
