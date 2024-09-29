@@ -6,7 +6,7 @@
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:23:17 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/09/25 00:37:46 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/09/29 22:22:19 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 
 void	ft_bzero(void *s, size_t n);
 
-unsigned int	ft_atoi(const char *buffer_size)
+long unsigned int	ft_chartoint(const char *buffer_size)
 {
-	unsigned int	result;
+	long unsigned int	result;
 
 	result = 0;
 	while (*buffer_size >= '0' && *buffer_size <= '9')
@@ -41,15 +41,33 @@ int	main(int argc, char *argv[])
 	}
 	else
 	{
-		n = ft_atoi(argv[1]);
+		n = ft_chartoint(argv[1]);
 		buffer = (char *)malloc(n);
 		if (!buffer)
 		{
 			write(1, "error, no se pudo asignar bloque de memoria\n", 44);
 			return (1);
 		}
-		ft_bzero(buffer, n);
+		ft_bzero(buffer, n); //en python tutor vi que al decirle que ponga 0, pone carac. nulo.
 		free(buffer);
 		return (0);
 	}
 }
+
+/*int    main(void)
+{
+    char    *buffer;
+    size_t    n;
+    
+    n = 9;
+    buffer = (char *)malloc(n);
+    if (!buffer)
+	{
+	write(1, "error, no se pudo asignar bloque de memoria\n", 44);
+	return (1);
+    }
+    ft_bzero(buffer, n);
+    free(buffer);
+    return (0);
+}
+*/
