@@ -1,69 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_memchr.c                                   :+:      :+:    :+:   */
+/*   main_ft_strchr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:23:17 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/09/30 00:35:16 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/09/30 00:33:30 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> //write
-#include <stdlib.h> //malloc y free
-#include <stddef.h> //size_t
+#include <unistd.h> // write
+#include <stdlib.h> // malloc y free
+#include <stddef.h> // size_t y NULL
 
-void	*ft_memchr(const void *s, int c, size_t n);
-
-unsigned int	ft_atoi(const char *buffer_size)
-{
-	unsigned int	result;
-
-	result = 0;
-	while (*buffer_size >= '0' && *buffer_size <= '9')
-	{
-		result = result * 10 + (*buffer_size - '0');
-		buffer_size++;
-	}
-	return (result);
-}
+char	*ft_strchr(const char *s, int c);
 
 int	main(int argc, char *argv[])
 {
-	char			*buffer;
-	size_t			n;
 	char			find_char;
 	char			*result;
-	const void		*cast_s;
+	const char		*cast_s;
 
-	if (argc < 4)
+	if (argc < 3)
 	{
 		write(1, "error\n", 6);
 		return (1);
 	}
+
 	cast_s = argv[1];
-	n = (size_t)ft_atoi(argv[3]);
-	buffer = (char *)malloc(n + 1);
-	if (!buffer)
-	{
-		write(1, "error, no se pudo asignar bloque de memoria\n", 44);
-		return (1);
-	}
 	find_char = argv[2][0];		
-	result = ft_memchr(cast_s, find_char, n);
+	result = ft_strchr(cast_s, find_char);
+
 	if (result == NULL)
 	{
 		write(1, "No se encontró el caracter\n", 28);
 	}
 	else
 	{
-		write(1, "Se encontró la consulta: ", 26);
+		write(1, "Se encontró la siguiente consulta: ", 35);
 		write(1, &find_char, 1);
-		write(1, " estaba dentro de los primeros ", 31);
-		write(1, (char[]){(char)(n + '0'), 0}, 1); //revisar en la chuleta
-		write(1, " caracteres\n", 12);
+		write(1, " y aparece por primera vez en el caracter: ", 43);
+		write(1, result, 1);
 	}
-	free(buffer);
+
 	return (0);
 }
