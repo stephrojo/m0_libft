@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_strchr.c                                   :+:      :+:    :+:   */
+/*   main_ft_strrchr.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strojo-h <strojo-h@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:23:17 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/10/01 17:05:04 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/10/01 17:07:52 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h> // malloc y free
 #include <stddef.h> // size_t y NULL
 
-char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
 
 int	main(int argc, char *argv[])
 {
@@ -29,7 +29,7 @@ int	main(int argc, char *argv[])
 		return (1);
 	}
 	find_char = argv[2][0];		
-	result = ft_strchr(argv[1], find_char);
+	result = ft_strrchr(argv[1], find_char);
 	if (result == NULL)
 	{
 		write(1, "No se encontró el caracter\n", 28);
@@ -38,7 +38,7 @@ int	main(int argc, char *argv[])
 	{
 		write(1, "Se encontró la siguiente consulta: ", 35);
 		write(1, &find_char, 1);
-		write(1, " y aparece por primera vez en el caracter: ", 43);
+		write(1, " y aparece por última vez en el caracter: ", 42);
 		location = (result - argv[1]) + 1;
 		if (location >= 0 && location <= 9)
 		{
