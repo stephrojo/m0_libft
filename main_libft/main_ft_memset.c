@@ -6,7 +6,7 @@
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:23:17 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/09/23 22:37:26 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/10/01 18:50:47 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ int	main(int argc, char *argv[])
 			return (1);
 		}
 		fill_char = argv[1][0];
-		ft_memset(buffer, fill_char, n);
 		buffer[n] = '\0';
+		ft_memset(buffer, fill_char, n);
 		write(1, buffer, n);
 		write(1, "\n", 1);
 		free(buffer);

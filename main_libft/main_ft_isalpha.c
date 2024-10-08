@@ -6,7 +6,7 @@
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:23:17 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/09/24 23:23:28 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/10/01 17:55:07 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int argc, char *argv[])
 		while (argv[1][i] != '\0')
 		{
 			c = argv[1][i];
-			if (ft_isalpha(c))
+			if (ft_isalpha(c) == 1)
 				write(1, "Es una letra\n", 13);
 			else
 				write(1, "No es una letra\n", 16);
