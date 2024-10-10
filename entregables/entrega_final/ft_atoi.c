@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 23:17:27 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/10/10 21:33:55 by strojo-h         ###   ########.fr       */
+/*   Created: 2024/10/10 21:48:02 by strojo-h          #+#    #+#             */
+/*   Updated: 2024/10/10 21:48:20 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+int	ft_atoi(const char *str)
 {
-	size_t	i;
-	size_t	src_len;
+	int			i;
+	int			sign;
+	long long	result;
 
-	src_len = 0;
-	while (src[src_len] != '\0')
-		src_len++;
-	if (size == 0)
-		return (src_len);
 	i = 0;
-	while (i < (size - 1) && src[i] != '\0')
+	sign = 1;
+	result = 0;
+	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		dst[i] = src[i];
+		if (str[i] == '-')
+			sign = -1;
 		i++;
 	}
-	dst[i] = '\0';
-	return (src_len);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = result * 10 + (str[i] - '0');
+		i++;
+	}
+	return ((int)(result * sign));
 }
