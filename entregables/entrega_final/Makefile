@@ -6,7 +6,7 @@
 #    By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/08 22:22:26 by strojo-h          #+#    #+#              #
-#    Updated: 2024/10/08 22:25:04 by strojo-h         ###   ########.fr        #
+#    Updated: 2024/10/09 23:19:40 by strojo-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,10 +25,13 @@ SRC         = ft_bzero.c \
 				ft_memmove.c \
 				ft_memset.c \
 				ft_strchr.c \
+				ft_strlcpy.c \
 				ft_strlen.c \
 				ft_strrchr.c \
 				ft_tolower.c \
 				ft_toupper.c \
+				#ft_strjoin.c \
+				#ft_substr.c \
 
 #SRC         = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 				ft_isascii.c ft_isdigit.c ft_isprint.c ft_memchr.c ft_memcmp.c \
