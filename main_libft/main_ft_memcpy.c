@@ -6,7 +6,7 @@
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 10:28:46 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/09/24 23:24:04 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/10/11 20:37:08 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		main(int argc, char *argv[])
 	i = 0;
 		if (argc < 2)
 	{
-		write(1, "error\n", 6);
+		write(1, "Error: Not enough arguments.\n", 29);
 		return (1);
 	}
 	else
@@ -45,7 +45,7 @@ int		main(int argc, char *argv[])
 		buffer_dest = (char *)malloc(n + 1);
 		if (!buffer_dest)
 		{
-			write(1, "error, no se pudo asignar bloque de memoria\n", 44);
+			write(1, "Error: unable to allocate memory.\n", 34);
 			return (1);
 		}
 		ft_memcpy(buffer_dest, argv[1], n);

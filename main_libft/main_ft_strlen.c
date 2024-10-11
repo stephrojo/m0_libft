@@ -6,7 +6,7 @@
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:23:17 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/09/22 22:15:43 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/10/11 20:19:58 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int argc, char *argv[])
 
 	if (argc < 2)
 	{
-		write(1, "error\n", 6);
+		write(1, "Error: Not enough arguments.\n", 29);
 		return (1);
 	}
 	else

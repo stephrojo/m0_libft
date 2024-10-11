@@ -6,7 +6,7 @@
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:23:17 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/10/01 17:55:07 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/10/11 20:21:32 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char *argv[])
 
 	if (argc < 2)
 	{
-		write(1, "error\n", 6);
+		write(1, "Error: Not enough arguments.\n", 29);
 		return (1);
 	}
 	else
@@ -31,9 +31,9 @@ int	main(int argc, char *argv[])
 		{
 			c = argv[1][i];
 			if (ft_isalpha(c) == 1)
-				write(1, "Es una letra\n", 13);
+				write(1, "OK\n", 3);
 			else
-				write(1, "No es una letra\n", 16);
+				write(1, "KO\n", 3);
 			i++;
 		}
 		return (0);

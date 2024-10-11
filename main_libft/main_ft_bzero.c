@@ -6,7 +6,7 @@
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:23:17 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/09/29 22:22:19 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/10/11 20:20:57 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main(int argc, char *argv[])
 
 	if (argc < 2)
 	{
-		write(1, "error\n", 6);
+		write(1, "Error: Not enough arguments.\n", 29);
 		return (1);
 	}
 	else
@@ -45,7 +45,7 @@ int	main(int argc, char *argv[])
 		buffer = (char *)malloc(n);
 		if (!buffer)
 		{
-			write(1, "error, no se pudo asignar bloque de memoria\n", 44);
+			write(1, "Error: unable to allocate memory.\n", 34);
 			return (1);
 		}
 		ft_bzero(buffer, n); //en python tutor vi que al decirle que ponga 0, pone carac. nulo.
@@ -53,21 +53,3 @@ int	main(int argc, char *argv[])
 		return (0);
 	}
 }
-
-/*int    main(void)
-{
-    char    *buffer;
-    size_t    n;
-    
-    n = 9;
-    buffer = (char *)malloc(n);
-    if (!buffer)
-	{
-	write(1, "error, no se pudo asignar bloque de memoria\n", 44);
-	return (1);
-    }
-    ft_bzero(buffer, n);
-    free(buffer);
-    return (0);
-}
-*/

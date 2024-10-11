@@ -6,18 +6,24 @@
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 22:03:48 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/10/10 22:06:48 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/10/11 20:08:39 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stddef.h>
+#include "libft.h"
 
-static size_t	ft_count_digits(int n)
+static int	ft_verifysign(int n)
+{
+	if (n < 0)
+		return (1);
+	return (0);
+}
+
+static size_t	ft_countnum(int n)
 {
 	size_t	count;
 
-	count = (n <= 0);
+	count = ft_verifysign(n);
 	while (n)
 	{
 		n /= 10;
@@ -29,23 +35,26 @@ static size_t	ft_count_digits(int n)
 char	*ft_itoa(int n)
 {
 	char	*str;
-	size_t	len;
-	long	num;
+	size_t	numlen;
 	int		sign;
 
-	len = ft_count_digits(n);
-	num = n;
-	sign = (n < 0);
-	str = (char *)malloc(len + 1);
+	if (n == 0)
+		return (ft_strdup("0"));
+	if (n == INT_MIN)
+		return (ft_strdup("-2147483648"));
+	numlen = ft_countnum(n);
+	sign = ft_verifysign(n);
+	str = (char *)malloc(numlen + 1);
 	if (!str)
 		return (NULL);
-	str[len] = '\0';
+	str[numlen] = '\0';
 	if (sign)
-		num = -num;
-	while (len--)
+		n = -n;
+	while (numlen != 0)
 	{
-		str[len] = (num % 10) + '0';
-		num /= 10;
+		str[numlen - 1] = (n % 10) + '0';
+		n /= 10;
+		numlen--;
 	}
 	if (sign)
 		str[0] = '-';

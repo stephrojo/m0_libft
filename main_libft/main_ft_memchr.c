@@ -6,7 +6,7 @@
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:23:17 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/09/30 00:35:16 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/10/11 20:43:06 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n);
 
-unsigned int	ft_atoi(const char *buffer_size)
+unsigned int	ft_fakeatoi(const char *buffer_size)
 {
 	unsigned int	result;
 
@@ -32,37 +32,40 @@ unsigned int	ft_atoi(const char *buffer_size)
 int	main(int argc, char *argv[])
 {
 	char			*buffer;
-	size_t			n;
+	int				n;
 	char			find_char;
 	char			*result;
 	const void		*cast_s;
+	char			cast_n;
 
 	if (argc < 4)
 	{
-		write(1, "error\n", 6);
+		write(1, "Error: Not enough arguments.\n", 29);
 		return (1);
 	}
 	cast_s = argv[1];
-	n = (size_t)ft_atoi(argv[3]);
-	buffer = (char *)malloc(n + 1);
+	n = ft_fakeatoi(argv[3]);
+	cast_n = n + '0';
+	buffer = (char *)malloc(cast_n + 1);
 	if (!buffer)
 	{
-		write(1, "error, no se pudo asignar bloque de memoria\n", 44);
+		write(1, "Error: unable to allocate memory.\n", 34);
 		return (1);
 	}
 	find_char = argv[2][0];		
 	result = ft_memchr(cast_s, find_char, n);
 	if (result == NULL)
 	{
-		write(1, "No se encontró el caracter\n", 28);
+		write(1, "KO: No character found.\n", 24);
 	}
 	else
 	{
-		write(1, "Se encontró la consulta: ", 26);
+		write(1, "OK: Character ", 14);
 		write(1, &find_char, 1);
-		write(1, " estaba dentro de los primeros ", 31);
-		write(1, (char[]){(char)(n + '0'), 0}, 1); //revisar en la chuleta
-		write(1, " caracteres\n", 12);
+		write(1, " found. ", 8);
+		write(1, "It was in the first ", 20);
+		write(1, &cast_n, 1);
+		write(1, " bytes.\n", 8);
 	}
 	free(buffer);
 	return (0);
