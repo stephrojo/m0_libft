@@ -6,9 +6,11 @@
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:53:57 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/09/24 23:22:35 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/10/11 02:26:19 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

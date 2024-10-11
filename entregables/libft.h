@@ -6,7 +6,7 @@
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 22:26:14 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/10/11 01:23:44 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/10/11 01:59:39 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stddef.h>
 # include <stdio.h>
+# include <limits.h>
 
 int		ft_atoi(const char *nptr);
 void	ft_bzero(void *s, size_t n);
