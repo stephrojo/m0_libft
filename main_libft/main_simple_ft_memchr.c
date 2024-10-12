@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   main_simple_ft_memchr.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 00:09:37 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/10/11 22:31:54 by strojo-h         ###   ########.fr       */
+/*   Created: 2024/10/11 22:44:48 by strojo-h          #+#    #+#             */
+/*   Updated: 2024/10/12 13:31:53 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void *ft_memchr(const void *s, int c, size_t n);
+
+int main(void)
 {
-	const unsigned char	*cast_s;
-	unsigned char		cast_c;
+	const char *str;
+	char *result;
 
-	cast_s = (const unsigned char *)s;
-	cast_c = (unsigned char)c;
-	if (n == 0)
-		return (NULL);
-	while (n != 0)
-	{
-		if (*cast_s == cast_c)
-		{
-			return ((void *)cast_s);
-		}
-		cast_s++;
-		n--;
+	str = "Hello, world!";
+	result = ft_memchr(str, 'w', 13);
+	if (result != NULL) {
+		printf("Se encontró '%c' en la posición: %ld\n", *result, result - str);
+	} else {
+		printf("Carácter no encontrado.\n");
 	}
-	return (NULL);
+	return (0);
 }

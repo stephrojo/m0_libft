@@ -6,78 +6,74 @@
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 21:56:50 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/10/10 22:02:01 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/10/12 13:17:09 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h> // Para size_t
-#include <stdlib.h>  // Para malloc y free
+#include "libft.h"
 
 // Función auxiliar para contar cuántas palabras contiene la cadena
 static size_t	ft_count_words(const char *s, char c)
 {
-	size_t	count;
+	size_t	word_count;
 
-	count = 0;
+	word_count = 0;
 	while (*s)
 	{
 		while (*s && *s == c)
 			s++;
 		if (*s && *s != c)
 		{
-			count++;
+			word_count++;
 			while (*s && *s != c)
 				s++;
 		}
 	}
-	return (count);
+	return (word_count);
 }
 
-// Función auxiliar para asignar una palabra
-static char	*ft_word_dup(const char *s, size_t len)
+// Función auxiliar para asignar una palabra usando ft_substr
+static char	*ft_get_substr(const char **s, char c)
 {
-	char	*word;
-	size_t	i;
+	size_t	word_length;
+	char	*substr;
 
-	word = (char *)malloc(sizeof(char) * (len + 1));
-	if (!word)
-		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		word[i] = s[i];
-		i++;
-	}
-	word[i] = '\0';
-	return (word);
+	word_length = 0;
+	while (**s && **s == c)
+		(*s)++;
+	while ((*s)[word_length] && (*s)[word_length] != c)
+		word_length++;
+	substr = ft_substr(*s, 0, word_length);
+	*s += word_length;
+	return (substr);
 }
 
 // Función principal que divide la cadena
 char	**ft_split(const char *s, char c)
 {
-	char	**result;
-	size_t	words;
-	size_t	i;
-	size_t	start;
+	char	**array_substrs;
+	size_t	substrs;
+	size_t	index;
 
-	i = 0;
+	index = 0;
 	if (!s)
 		return (NULL);
-	words = ft_count_words(s, c);
-	result = (char **)malloc(sizeof(char *) * (words + 1));
-	if (!result)
+	substrs = ft_count_words(s, c);
+	array_substrs = (char **)malloc(sizeof(char *) * (substrs + 1));
+	if (!array_substrs)
 		return (NULL);
-	while (*s)
+	while (index < substrs)
 	{
-		while (*s && *s == c)
-			s++;
-		start = 0;
-		while (s[start] && s[start] != c)
-			start++;
-		if (start > 0)
-			result[i++] = ft_word_dup(s, start);
-		s += start;
+		array_substrs[index] = ft_get_substr(&s, c);
+		if (!array_substrs[index])
+		{
+			while (index > 0)
+				free(array_substrs[--index]);
+			free(array_substrs);
+			return (NULL);
+		}
+		index++;
 	}
-	result[i] = NULL;
-	return (result);
+	array_substrs[index] = NULL;
+	return (array_substrs);
 }
