@@ -6,11 +6,11 @@
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 22:21:06 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/10/10 22:23:42 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/10/14 09:58:48 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {

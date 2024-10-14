@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   main_simple_ft_putstr_fd.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 22:21:08 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/10/14 11:11:03 by strojo-h         ###   ########.fr       */
+/*   Created: 2024/10/14 11:23:09 by strojo-h          #+#    #+#             */
+/*   Updated: 2024/10/14 11:24:15 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <fcntl.h> // Para open()
+#include <unistd.h> // Para close()
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd);
+
+int main(void)
 {
-	if (s)
-		write(fd, s, ft_strlen(s));
+	int fd;
+
+	fd = open("output_str.txt", O_WRONLY | O_CREAT, 0644);
+	if (fd == -1)
+		return (1); 
+	ft_putstr_fd("Hello 42 Madrid!", fd);
+	close(fd);
+	return (0);
 }

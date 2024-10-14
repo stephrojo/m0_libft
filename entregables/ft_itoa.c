@@ -6,7 +6,7 @@
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 22:03:48 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/10/12 13:25:20 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/10/14 10:44:44 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static size_t	ft_count_numbers(int n)
 	size_t	num_count;
 
 	num_count = ft_verify_sign(n);
-	while (n)
+	while (n != 0)
 	{
 		n /= 10;
 		num_count++;
@@ -43,11 +43,11 @@ char	*ft_itoa(int n)
 	if (n == INT_MIN)
 		return (ft_strdup("-2147483648"));
 	num_length = ft_count_numbers(n);
-	sign = ft_verify_sign(n);
 	str = (char *)malloc(num_length + 1);
 	if (!str)
 		return (NULL);
 	str[num_length] = '\0';
+	sign = ft_verify_sign(n);
 	if (sign)
 		n = -n;
 	while (num_length != 0)

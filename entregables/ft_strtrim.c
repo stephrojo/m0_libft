@@ -6,12 +6,10 @@
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 21:52:32 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/10/10 22:18:09 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/10/13 22:29:22 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stddef.h>
 #include "libft.h"
 
 static int	ft_is_in_set(char c, const char *set)

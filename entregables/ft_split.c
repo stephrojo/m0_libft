@@ -6,13 +6,12 @@
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 21:56:50 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/10/12 13:17:09 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/10/13 22:17:35 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Función auxiliar para contar cuántas palabras contiene la cadena
 static size_t	ft_count_words(const char *s, char c)
 {
 	size_t	word_count;
@@ -32,7 +31,6 @@ static size_t	ft_count_words(const char *s, char c)
 	return (word_count);
 }
 
-// Función auxiliar para asignar una palabra usando ft_substr
 static char	*ft_get_substr(const char **s, char c)
 {
 	size_t	word_length;
@@ -48,7 +46,6 @@ static char	*ft_get_substr(const char **s, char c)
 	return (substr);
 }
 
-// Función principal que divide la cadena
 char	**ft_split(const char *s, char c)
 {
 	char	**array_substrs;
