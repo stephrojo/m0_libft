@@ -6,7 +6,7 @@
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 21:48:02 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/10/11 19:23:37 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/10/14 18:02:19 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_atoi(const char *nptr)
 {
 	int			i;
 	int			sign;
-	long long	result;
+	int			result;
 
 	i = 0;
 	sign = 1;
@@ -33,10 +33,6 @@ int	ft_atoi(const char *nptr)
 	{
 		result = result * 10 + (nptr[i] - '0');
 		i++;
-		if ((result * sign) > INT_MAX)
-			return (INT_MAX);
-		if ((result * sign) < INT_MIN)
-			return (INT_MIN);
 	}
 	return ((int)(result * sign));
 }
