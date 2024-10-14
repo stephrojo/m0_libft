@@ -6,13 +6,11 @@
 #    By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/08 22:22:26 by strojo-h          #+#    #+#              #
-#    Updated: 2024/10/14 18:16:47 by strojo-h         ###   ########.fr        #
+#    Updated: 2024/10/14 20:57:58 by strojo-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME        = libft.a
-
-INCLUDES    = libft.h
 
 SRC         = ft_atoi.c \
 				ft_bzero.c \
@@ -52,7 +50,7 @@ SRC         = ft_atoi.c \
 OBJ         = $(SRC:.c=.o)
 
 CC          = cc
-CCFLAGS     = -Wall -Wextra -Werror
+CFLAGS     = -Wall -Wextra -Werror
 
 AR          = ar rcs
 RM          = rm -f
@@ -63,7 +61,7 @@ $(NAME): $(OBJ)
 	$(AR) $(NAME) $(OBJ)
 
 %.o: %.c
-	$(CC) $(CCFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJ)

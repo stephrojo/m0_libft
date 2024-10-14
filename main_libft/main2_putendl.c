@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   main2_putendl.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 21:49:36 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/10/14 22:32:28 by strojo-h         ###   ########.fr       */
+/*   Created: 2024/10/14 19:52:30 by strojo-h          #+#    #+#             */
+/*   Updated: 2024/10/14 20:01:39 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdint.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include "../entregables_obligatorio/libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void    main(void)
 {
-	size_t	total_size;
-	void	*ptr;
+    char    *str;
+    int open_value;
 
-	total_size = nmemb * size;
-
-	if (nmemb == SIZE_MAX || size == SIZE_MAX)
-		return (0);
-	ptr = malloc(total_size);
-	if (!ptr)
-		return (NULL);
-	ft_bzero(ptr, total_size);
-	return (ptr);
+    str = "Holaaaaa";
+    open_value = open("holaines.txt", 1);
+    if(open_value == -1)
+        return ;
+    ft_putendl_fd(str, open_value);
 }

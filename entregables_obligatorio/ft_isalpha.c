@@ -6,7 +6,7 @@
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 15:11:40 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/10/11 02:09:30 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/10/14 19:23:26 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,5 @@ int	ft_isalpha(int c)
 {
 	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		return (1);
-	else
-		return (0);
+	return (0);
 }

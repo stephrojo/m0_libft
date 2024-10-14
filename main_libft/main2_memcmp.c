@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   main2_memcmp.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 21:49:36 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/10/14 22:32:28 by strojo-h         ###   ########.fr       */
+/*   Created: 2024/10/14 19:38:23 by strojo-h          #+#    #+#             */
+/*   Updated: 2024/10/14 19:44:03 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdint.h>
+#include <stdio.h>
 
-void	*ft_calloc(size_t nmemb, size_t size)
+#include "../entregables_obligatorio/libft.h"
+
+void    main (void)
 {
-	size_t	total_size;
-	void	*ptr;
+    char *str1="abc";
+    char *str2="abcdef";
+    int result;
 
-	total_size = nmemb * size;
-
-	if (nmemb == SIZE_MAX || size == SIZE_MAX)
-		return (0);
-	ptr = malloc(total_size);
-	if (!ptr)
-		return (NULL);
-	ft_bzero(ptr, total_size);
-	return (ptr);
+    result = ft_memcmp(str1, str2, 5);
+    printf("Resutlado memcmp: %d\n", result);
 }

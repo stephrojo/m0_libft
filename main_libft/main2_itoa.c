@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   main2_itoa.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 21:49:36 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/10/14 22:32:28 by strojo-h         ###   ########.fr       */
+/*   Created: 2024/10/14 19:29:12 by strojo-h          #+#    #+#             */
+/*   Updated: 2024/10/14 19:34:57 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdint.h>
+#include <stdio.h>
 
-void	*ft_calloc(size_t nmemb, size_t size)
+#include "../entregables_obligatorio/libft.h"
+void    main(void)
 {
-	size_t	total_size;
-	void	*ptr;
-
-	total_size = nmemb * size;
-
-	if (nmemb == SIZE_MAX || size == SIZE_MAX)
-		return (0);
-	ptr = malloc(total_size);
-	if (!ptr)
-		return (NULL);
-	ft_bzero(ptr, total_size);
-	return (ptr);
+    int number;
+    char    *num_str;
+    
+    number = 7849;
+    num_str = ft_itoa(number);
+    printf("numero convertido: %s\n", num_str);
+    free(num_str);
 }

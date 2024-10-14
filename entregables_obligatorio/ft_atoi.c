@@ -6,7 +6,7 @@
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 21:48:02 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/10/14 18:02:19 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/10/14 19:13:39 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ int	ft_atoi(const char *nptr)
 		result = result * 10 + (nptr[i] - '0');
 		i++;
 	}
-	return ((int)(result * sign));
+	return (result * sign);
 }
