@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   main_simple_ft_strdup.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 21:37:51 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/10/14 16:20:14 by strojo-h         ###   ########.fr       */
+/*   Created: 2024/10/14 13:35:36 by strojo-h          #+#    #+#             */
+/*   Updated: 2024/10/14 13:38:51 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char *ft_strdup(const char *s);
+
+int main(void)
 {
-	size_t	dst_len;
-	size_t	src_len;
-	size_t	i;
-	size_t	j;
+	const char *original = "Holaaaaa, ya quiero pasar la libft!";
+	char *duplicate;
 
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
-	if (size <= dst_len)
-		return (size + src_len);
-	i = dst_len;
-	j = 0;
-	while (src[j] != '\0' && (i < size - 1))
+	duplicate = ft_strdup(original);
+	if (duplicate == NULL)
 	{
-		dst[i] = src[j];
-		i++;
-		j++;
+		printf("Error al duplicar la cadena.\n");
+		return (1);
 	}
-	dst[i] = '\0';
-	return (dst_len + src_len);
+
+	printf("Cadena original: %s\n", original);
+	printf("Cadena duplicada: %s\n", duplicate);
+
+	free(duplicate);
+	return (0);
 }

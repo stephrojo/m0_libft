@@ -6,7 +6,7 @@
 #    By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/08 22:22:26 by strojo-h          #+#    #+#              #
-#    Updated: 2024/10/10 22:27:44 by strojo-h         ###   ########.fr        #
+#    Updated: 2024/10/14 12:59:36 by strojo-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,15 +47,9 @@ SRC         = ft_atoi.c \
 				ft_strtrim.c \
 				ft_substr.c \
 				ft_tolower.c \
-				ft_toupper.c \
-
-#BONUSSRC    = ft_lstnew_bonus.c ft_lstadd_front_bonus.c \
-				ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstadd_back_bonus.c \
-				ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c \
-				ft_lstmap_bonus.c
+				ft_toupper.c
 
 OBJ         = $(SRC:.c=.o)
-BONUSOBJ    = $(BONUSSRC:.c=.o)
 
 CC          = cc
 CCFLAGS     = -Wall -Wextra -Werror
@@ -68,20 +62,15 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@$(AR) $(NAME) $(OBJ)
 
-bonus: $(OBJ) $(BONUSOBJ)
-	@$(AR) $(NAME) $(OBJ) $(BONUSOBJ)
-
 %.o: %.c
-	$(CC) $(CCFLAGS) -c $< -o $@
+	@$(CC) $(CCFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJ) $(BONUSOBJ)
+	@$(RM) $(OBJ)
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
 
-rebonus: fclean bonus
-
-.PHONY: all clean fclean re bonus rebonus
+.PHONY: all clean fclean re

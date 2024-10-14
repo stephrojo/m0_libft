@@ -6,7 +6,7 @@
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 16:38:23 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/10/14 11:59:53 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/10/14 15:43:58 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	cast_dest = (unsigned char *)dest;
 	cast_src = (unsigned char *)src;
-	if (dest == NULL && src == NULL)
+	if (n == 0)
+		return (dest);
+	if (dest == NULL || src == NULL)
 		return (NULL);
 	while (n != 0)
 	{

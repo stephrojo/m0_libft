@@ -6,7 +6,7 @@
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 23:33:24 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/10/14 12:00:16 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/10/14 13:10:15 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ char	*ft_strchr(const char *s, int c)
 	char	cast_c;
 
 	i = 0;
-	cast_c = (int)c;
+	cast_c = (char)c;
+	if (cast_c == '\0')
+		return ((char *)(s + ft_strlen(s)));
 	while (s[i] != '\0')
 	{
 		if (s[i] == cast_c)
 			return ((char *)(s + i));
 		i++;
 	}
-	if (c == '\0')
-		return ((char *)(s + i));
 	return (NULL);
 }

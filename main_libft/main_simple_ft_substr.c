@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   main_simple_ft_substr.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 21:37:51 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/10/14 16:20:14 by strojo-h         ###   ########.fr       */
+/*   Created: 2024/10/14 16:52:24 by strojo-h          #+#    #+#             */
+/*   Updated: 2024/10/14 17:12:03 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+
+int main(void)
 {
-	size_t	dst_len;
-	size_t	src_len;
-	size_t	i;
-	size_t	j;
+    const char *str = "Holaaa 42 Madrid";
+    char *substr;
 
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
-	if (size <= dst_len)
-		return (size + src_len);
-	i = dst_len;
-	j = 0;
-	while (src[j] != '\0' && (i < size - 1))
-	{
-		dst[i] = src[j];
-		i++;
-		j++;
-	}
-	dst[i] = '\0';
-	return (dst_len + src_len);
+    substr = ft_substr(str, 7, 5);
+    printf("Subcadena: %s\n", substr);
+    free(substr);
+    return (0);
 }

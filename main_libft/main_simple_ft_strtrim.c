@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   main_simple_ft_strtrim.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 21:37:51 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/10/14 16:20:14 by strojo-h         ###   ########.fr       */
+/*   Created: 2024/10/14 16:52:21 by strojo-h          #+#    #+#             */
+/*   Updated: 2024/10/14 17:23:37 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_strtrim(char const *s1, char const *set);
+
+int main(void)
 {
-	size_t	dst_len;
-	size_t	src_len;
-	size_t	i;
-	size_t	j;
+	const char	*str1;
+	const char	*set;
+	char 		*trimmed;
 
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
-	if (size <= dst_len)
-		return (size + src_len);
-	i = dst_len;
-	j = 0;
-	while (src[j] != '\0' && (i < size - 1))
+	str1 = "   Hola, 42 Madrid!   ";
+	set = " ";
+	trimmed = ft_strtrim(str1, set);
+	if (trimmed)
 	{
-		dst[i] = src[j];
-		i++;
-		j++;
+		printf("Original: '%s'\n", str1);
+		printf("Cortada: '%s'\n", trimmed);
+		free(trimmed);
 	}
-	dst[i] = '\0';
-	return (dst_len + src_len);
+	else
+		printf("Error al cortar la cadena.\n");
+	return (0);
 }
