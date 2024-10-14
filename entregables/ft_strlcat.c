@@ -6,11 +6,11 @@
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 21:37:51 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/10/10 21:40:07 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/10/14 12:00:28 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s);
 

@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   main_simple_ft_memcmp.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 21:46:56 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/10/14 12:00:50 by strojo-h         ###   ########.fr       */
+/*   Created: 2024/10/14 12:18:49 by strojo-h          #+#    #+#             */
+/*   Updated: 2024/10/14 12:21:29 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+int ft_memcmp(const void *s1, const void *s2, size_t n);
+
+int main(void)
 {
-	size_t	i;
-	size_t	j;
+    const char *str1;
+    const char *str2;
+    int result;
 
-	if (!*needle)
-		return ((char *)haystack);
-	i = 0;
-	while (haystack[i] && i < len)
-	{
-		j = 0;
-		while (needle[j] && haystack[i + j] && i + j < len
-			&& haystack[i + j] == needle[j])
-			j++;
-		if (!needle[j])
-			return ((char *)(haystack + i));
-		i++;
-	}
-	return (NULL);
+    str1 = "Hosa";
+    str2 = "Hola, ke ase";
+    result = ft_memcmp(str1, str2, 3);
+    printf("Comparando '%s' y '%s': %d\n", str1, str2, result);
+    return (0);
 }
