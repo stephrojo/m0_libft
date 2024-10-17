@@ -6,7 +6,7 @@
 /*   By: strojo-h <strojo-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 21:49:36 by strojo-h          #+#    #+#             */
-/*   Updated: 2024/10/15 19:27:55 by strojo-h         ###   ########.fr       */
+/*   Updated: 2024/10/16 19:57:06 by strojo-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t	total_size;
 	void	*ptr;
 
-	total_size = nmemb * size;
-	if (nmemb == SIZE_MAX || size == SIZE_MAX)
+	if ((nmemb * size) >= SIZE_MAX)
 		return (NULL);
+	total_size = nmemb * size;
 	ptr = malloc(total_size);
 	if (!ptr)
 		return (NULL);
